@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>color-mixer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main id="app" class="flex-c-c-c mrg-t-1_5vw">
+      <section :style="{ backgroundColor: combinedColor }">
+        <div class="bdr-1rem-s-w-02">
+          <div
+            :style="{ backgroundColor: combinedColor }"
+            class="polaroid"
+          ></div>
+          <p id="value-display" class="mrg-l-auto bg-clr-white-02 pdg-t-05">
+            {{ combinedColor }}
+          </p>
+        </div>
+        <div class="banner flex pdg-l-1-5rem pdg-bl-1">
+          <div>
+            <section class="flex">
+              <label for="range-red">r</label>
+              <input
+                id="range-red"
+                type="range"
+                step="1"
+                min="0"
+                max="255"
+                v-model="red"
+              />
+            </section>
+            <section class="flex">
+              <label for="range-green">g</label>
+              <input
+                id="range-green"
+                type="range"
+                step="1"
+                min="0"
+                max="255"
+                v-model="green"
+              />
+            </section>
+            <section class="flex">
+              <label for="range-blue">b</label>
+              <input
+                id="range-blue"
+                type="range"
+                step="1"
+                min="0"
+                max="255"
+                v-model="blue"
+              />
+            </section>
+          </div>
+
+          <button
+            @click="fetchRandomColors"
+            class="mrg-r-1rem bg-gdnt-rainbow bdr-0 bdr-r-025 pdg-il-05 pdg-bl-07"
+          >
+            random colour
+          </button>
+        </div>
+      </section>
+    </main>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
